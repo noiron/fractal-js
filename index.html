@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>JavaScript Fractal</title>
+    <meta name="author" content="noiron" />
+
+    <meta name="Resource-type" content="Document" />
+
+    <link rel="stylesheet" type="text/css" href="jquery.fullPage.css" />
+
+    <!--[if IE]>
+        <script type="text/javascript">
+             var console = { log: function() {} };
+        </script>
+    <![endif]-->
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>
+
+    <script type="text/javascript" src="jquery.slimscroll.min.js"></script>
+    <script type="text/javascript" src="jquery.fullPage.min.js"></script>
+
+    <script type="text/javascript">
+
+        $(document).ready(function() {
+            $('#fullpage').fullpage({
+                anchors: ['demo0', 'demo1', 'demo2', 'demo3'],
+                sectionsColor: ['#1BBC9B', '#1BBC9B', '#1BBC9B', '#1BBC9B'],
+                navigation: true,
+                navigationPosition: 'right',
+                navigationTooltips:
+                ['demo0',
+                'circle',
+                'demo2',
+                'demo3']
+            });
+        });
+    </script>
+
+</head>
+<body>
+
+
+<div id="fullpage">
+    <div class="section" id="section0">
+        <div class="intro">
+            <canvas id="myCanvas0" resize></canvas>
+        </div>
+    </div>
+    <div class="section" id="section1">
+        <div class="intro">
+            <canvas id="myCanvas1" resize></canvas>
+        </div>
+    </div>
+    <div class="section" id="section2">
+        <div class="intro">
+            <canvas id="myCanvas2" resize></canvas>
+        </div>
+    </div>
+    <div class="section" id="section3">
+        <div class="intro">
+            <canvas id="myCanvas3" resize></canvas>
+        </div>
+    </div>
+
+</div>
+
+<script language="javascript" type="text/javascript" src="drawing0.js"></script>
+<script language="javascript" type="text/javascript" src="drawing1.js"></script>
+<script language="javascript" type="text/javascript" src="drawing2.js"></script>
+<script language="javascript" type="text/javascript" src="drawing3.js"></script>
+
+<script>
+for (var i = 0 ; i <= 3; i++) {
+    FRACTAL.demo[i]("myCanvas"+i);
+}
+</script>
+
+</body>
+
+</html>
